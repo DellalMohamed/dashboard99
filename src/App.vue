@@ -1,12 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <navBar />
+  <settingIcon class="setting_icon" />
   <router-view />
+  <iconlyArrowUp />
+  <footerView />
 </template>
-
+<script>
+import navBar from "./components/navBar.vue";
+import settingIcon from "./components/settingIcon.vue";
+import iconlyArrowUp from "./components/iconlyArrowUp.vue";
+import footerView from "./components/footerComp.vue";
+export default {
+  components: {
+    navBar,
+    settingIcon,
+    iconlyArrowUp,
+    footerView,
+  },
+};
+</script>
 <style lang="scss">
+body {
+  background-color: #f9f7f6;
+}
+.setting_icon {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
