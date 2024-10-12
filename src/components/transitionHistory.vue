@@ -62,9 +62,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../css/variables.scss";
 .transition_history {
   margin: 0 12px;
-  background-color: #fff;
+  background-color: $light-one;
   width: 50%;
   padding: 20px;
   border-radius: 1.5rem;
@@ -143,7 +144,7 @@ export default {
                   height: 33px;
                   border: 1px solid #e5e5e5;
                   border-radius: 50%;
-                  background-color: #f9f7f6;
+                  background-color: $light-two;
                   display: flex;
                   justify-content: center;
                   align-items: center;

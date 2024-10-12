@@ -226,6 +226,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../css/variables.scss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -261,7 +262,7 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: $light-one;
     .input_search {
       margin: 0 57px;
       input {
@@ -270,7 +271,7 @@ export default {
         border: none;
         border-radius: 30px;
         padding-left: 28px;
-        background-color: #f9f7f6;
+        background-color: $light-two;
         cursor: pointer;
         &:focus {
           outline: none;
@@ -365,7 +366,7 @@ export default {
         width: 33px;
         height: 33px;
         border-radius: 50%;
-        background-color: #f9f7f6;
+        background-color: $light-two;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -412,7 +413,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 25px;
-  background-color: #f9f7f6;
+  background-color: $light-two;
   .header_name {
     text-align: start;
     h2 {

@@ -154,4 +154,117 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../css/variables.scss";
+.job_card {
+  width: 41.66%;
+  padding: 20px;
+  margin: 0 12px;
+  border-radius: 1.5rem;
+  background-color: $light-one;
+  .card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .card_body {
+    margin: 8px 20px;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      list-style: none;
+      .job_details {
+        height: 56px;
+        padding: 11px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        background-color: $light-two;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        &:hover {
+          animation: trnaslate_up 0.6s infinite ease-in-out;
+        }
+        .icon_cont {
+          width: 45px;
+          height: 40px;
+          background-color: #e5eceb;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .job_info {
+          h3 {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+          }
+          p {
+            font-weight: 600;
+            color: #aaa3aa;
+            font-size: 14px;
+            text-wrap: nowrap;
+          }
+        }
+      }
+    }
+    .job_table {
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        thead {
+          tr {
+            border-bottom: 1px solid #aaa3a0;
+            th {
+              font-size: 14px;
+              font-weight: 700;
+              padding: 12px 9px;
+              color: #aaa3a0;
+              text-align: start;
+            }
+          }
+        }
+        tbody {
+          tr {
+            border-bottom: 1px solid #aaa3a0;
+            td {
+              padding: 11px 4px;
+              text-align: start;
+              .employee {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 8px;
+                .img_cont {
+                  width: 28px;
+                  height: 28px;
+                  img {
+                    width: 100%;
+                    border-radius: 50%;
+                  }
+                }
+                h6:hover {
+                  color: #308e87;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

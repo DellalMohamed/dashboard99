@@ -1,7 +1,7 @@
 <template>
-  <div class="investment">
+  <div class="total_invest">
     <div class="card_header">
-      <h3>Total Invest</h3>
+      <h3>Audit log</h3>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -11,6 +11,7 @@
           <a href="" class="dropdown_item"></a>
         </div>-->
     </div>
+    <div class="card_body"></div>
   </div>
 </template>
 
@@ -24,12 +25,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "../css/variables.scss";
-.investment {
+.total_invest {
   width: 25%;
   padding: 20px;
+  margin: 0 12px;
   background-color: $light-one;
   border-radius: 1.5rem;
-  margin: 0 12px;
   .card_header {
     display: flex;
     justify-content: space-between;
@@ -46,6 +47,9 @@ export default {
         border-radius: 5px;
       }
     }
+  }
+  .card_body {
+    padding: 17px 0;
   }
 }
 </style>

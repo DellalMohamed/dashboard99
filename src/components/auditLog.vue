@@ -1,7 +1,8 @@
 <template>
-  <div class="audit_log">
+  <div :class="themeClass" class="audit_log">
     <div class="card_header">
       <h3>Audit log</h3>
+      <button @click="toggleTheme">Toggle Theme</button>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -11,7 +12,7 @@
         <a href="" class="dropdown_item"></a>
       </div>-->
     </div>
-    <div class="card_body">
+    <div class="card_body" :class="themeClass">
       <ul>
         <li>
           <div class="img_cont">
@@ -47,7 +48,7 @@
             </a>
             <p>Andre Sluczka</p>
           </div>
-          <span>2 hours</span>
+          <span :class="themeClass">2 hours</span>
         </li>
         <li>
           <div class="img_cont">
@@ -92,6 +93,25 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isDarkMode: false,
+    };
+  },
+  computed: {
+    themeClass() {
+      return {
+        "dark-theme": this.isDarkMode,
+        "light-theme": !this.isDarkMode,
+        "secondary-bg": true,
+      };
+    },
+  },
+  methods: {
+    toggleTheme() {
+      this.isDarkMode = !this.isDarkMode;
+    },
+  },
   setup() {
     return {};
   },
@@ -99,10 +119,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../css/variables.scss";
+.light-theme {
+  background-color: $light-one;
+  .secondary-bg {
+    background-color: $light-two;
+  }
+}
+
+.dark-theme {
+  background-color: $dark-one;
+
+  .secondary-bg {
+    background-color: $dark-two;
+  }
+}
 .audit_log {
   width: 25%;
   padding: 20px;
-  background-color: #fff;
+  background-color: $light-one;
   border-radius: 1.5rem;
   .card_header {
     display: flex;
@@ -183,7 +218,7 @@ export default {
           border: 1px solid #e5e5e5;
           border-radius: 5px;
           line-height: 22px;
-          background-color: #f9f7f6;
+          background-color: $light-two;
         }
       }
     }

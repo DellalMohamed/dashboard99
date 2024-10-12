@@ -35,4 +35,113 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "../css/variables.scss";
+.welcome_banner {
+  width: 33%;
+  background-color: $light-one;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  .welcome_card {
+    .card_header {
+      width: 100%;
+      height: 196px;
+      overflow: hidden;
+      position: relative;
+      background-color: #308e87;
+      img:first-child {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .img_2 {
+        position: absolute;
+        top: 40px;
+        right: 4px;
+        z-index: 2;
+        animation: up-down 4s infinite;
+      }
+      .img_3 {
+        position: absolute;
+        top: -1px;
+        left: 4px;
+        z-index: 2;
+        animation: myOrbit 9s linear infinite;
+      }
+      .img_4 {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        z-index: 2;
+        animation: up-down 4s infinite;
+      }
+      .img_5 {
+        position: absolute;
+        top: 140px;
+        left: 120px;
+        z-index: 2;
+        animation: move1 8s linear 0s infinite;
+      }
+      .img_6 {
+        position: absolute;
+        top: -12px;
+        left: 179px;
+        z-index: 2;
+        animation: myOrbit 9s linear infinite;
+      }
+    }
+    .card_body {
+      padding: 20px;
+      letter-spacing: 0.5px;
+      .hello_cont {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 7px;
+        h1 {
+          font-weight: 700;
+          font-size: 30px;
+          margin: 0;
+        }
+        img {
+          width: 30px;
+          cursor: pointer;
+          animation: wave-animation 2.5s infinite;
+        }
+      }
+      p {
+        text-align: start;
+        margin: 0 0 19px;
+      }
+      .card_bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          height: 30px;
+          padding: 6px 12px;
+          border: none;
+          border-radius: 60px;
+          background-color: #308e87;
+          color: #fff;
+        }
+        .time_box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $light-two;
+          border-radius: 6px;
+          border: 1px solid black;
+          width: 115px;
+          height: 41px;
+          padding: 10px 8px;
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

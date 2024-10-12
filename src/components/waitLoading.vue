@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../css/variables.scss";
 .wait_loading {
   display: flex;
   justify-content: center;
@@ -49,7 +50,6 @@ export default {
   .loading_item:nth-child(5) {
     animation-delay: 0.5s;
     animation: height_animation_1 2s ease-in;
-    //animation-iteration-count: 3;
   }
 }
 @keyframes jump {

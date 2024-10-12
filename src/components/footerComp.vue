@@ -9,13 +9,14 @@
   </footer>
 </template>
 <style lang="scss">
+@import "../css/variables.scss";
 .footer {
   margin-top: 30px;
   padding: 19px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: $light-one;
   .footer-copyright {
     font-size: 14px;
     font-weight: 600;

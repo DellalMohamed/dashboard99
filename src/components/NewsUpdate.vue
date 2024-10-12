@@ -1,7 +1,7 @@
 <template>
-  <div class="latest_Activity">
+  <div class="news_update">
     <div class="card_header">
-      <h3>Latest Activity</h3>
+      <h3>News & Update</h3>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -15,15 +15,14 @@
       <ul>
         <li v-for="i in 7" :key="i">
           <div class="img_cont">
-            <img src="../assets/download (4).png" alt="" />
+            <img src="../assets/download (13).png" alt="" />
           </div>
           <div class="latest_hist_head">
             <a href="">
-              <h6>Added new repository</h6>
+              <h6>Google project apply reviwe</h6>
             </a>
-            <p>Fabpot/symfony-docker</p>
+            <p>Today’s news...</p>
           </div>
-          <span>2 hours</span>
         </li>
       </ul>
     </div>
@@ -40,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../css/variables.scss";
-.latest_Activity {
+.news_update {
   width: 25%;
   padding: 20px;
   background-color: $light-one;
@@ -75,8 +74,8 @@ export default {
         align-items: center;
         gap: 8px;
         .img_cont {
-          width: 30px;
-          height: 30px;
+          width: 47px;
+          height: 33px;
           border-radius: 50%;
           display: flex;
           justify-content: space-evenly;
@@ -84,7 +83,9 @@ export default {
           background-color: #3eb95f;
           position: relative;
           img {
-            width: 16px;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
           }
         }
         .latest_hist_head {
@@ -105,18 +106,6 @@ export default {
               color: #aaa3a0;
             }
           }
-        }
-        span {
-          width: 70px;
-          height: 35px;
-          padding: 6px 8px;
-          font-weight: 600;
-          font-size: 14px;
-          color: #2c3e50;
-          border: 1px solid #e5e5e5;
-          border-radius: 5px;
-          line-height: 22px;
-          background-color: $light-two;
         }
       }
     }

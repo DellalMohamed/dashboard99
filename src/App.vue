@@ -1,15 +1,19 @@
 <template>
-  <navBar />
-  <settingIcon class="setting_icon" />
-  <router-view />
-  <iconlyArrowUp />
-  <footerView />
+  <div :class="{ dark: isDark }">
+    <button @click="toggleDarkMode">Toggle Theme</button>
+    <navBar />
+    <settingIcon class="setting_icon" />
+    <router-view />
+    <iconlyArrowUp />
+    <footerView />
+  </div>
 </template>
 <script>
 import navBar from "./components/navBar.vue";
 import settingIcon from "./components/settingIcon.vue";
 import iconlyArrowUp from "./components/iconlyArrowUp.vue";
 import footerView from "./components/footerComp.vue";
+import { useDark } from "@vueuse/core";
 export default {
   components: {
     navBar,
@@ -17,11 +21,22 @@ export default {
     iconlyArrowUp,
     footerView,
   },
+  data() {
+    return {
+      isDark: useDark(),
+    };
+  },
+  methods: {
+    toggleDarkMode() {
+      this.isDark = !this.isDark;
+    },
+  },
 };
 </script>
 <style lang="scss">
+@import "./css/variables.scss";
 body {
-  background-color: #f9f7f6;
+  background-color: $light-two;
 }
 .setting_icon {
   position: fixed;
