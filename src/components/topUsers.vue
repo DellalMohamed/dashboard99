@@ -50,7 +50,7 @@ export default {
   margin: 0 12px;
   width: 25%;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   .card_header {
     display: flex;
@@ -60,6 +60,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {
@@ -102,7 +103,7 @@ export default {
               h6 {
                 font-size: 14px;
                 font-weight: 600;
-                color: #292929;
+                color: var(--color-third);
               }
             }
             p {
@@ -110,7 +111,7 @@ export default {
               justify-content: start;
               align-items: center;
               font-weight: 600;
-              color: #aaa3a0;
+              color: var(--font-color);
               img {
                 width: 13px;
               }
@@ -122,7 +123,7 @@ export default {
         }
         span {
           font-weight: 600;
-          color: #aaa3a0;
+          color: var(--font-color);
         }
       }
     }

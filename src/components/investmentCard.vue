@@ -27,7 +27,7 @@ export default {
 .investment {
   width: 25%;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   margin: 0 12px;
   .card_header {
@@ -38,6 +38,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {

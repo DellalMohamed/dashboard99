@@ -1,29 +1,39 @@
 <template>
-  <div style="display: flex; flex-direction: column">
-    <div class="defaut_dashboard container">
-      <welcomeBanner />
-      <earningCard />
-      <jobCard />
-    </div>
-    <div class="row_2">
-      <transitionHistory />
-      <auditLog />
-      <investmentCard />
-    </div>
-    <div class="row_3">
-      <latestActivity />
-      <revenueGrowth />
-      <topUsers />
-    </div>
-    <div class="row_4">
-      <NewsUpdates />
-      <totalInvest />
-      <manageInvoice />
+  <div class="home_container">
+    <left_sidebare :isVisible="isSidebarVisible" :layoutType="layoutType" />
+    <div
+      class="content_area"
+      :class="{ shrink: isSidebarVisible }"
+      style="display: flex; flex-direction: column"
+    >
+      <pageTitle />
+      <button @click="toggleSidebar">Toggle Sidebar</button>
+      <div class="default_dashboard container">
+        <welcomeBanner />
+        <earningCard />
+        <jobCard />
+      </div>
+      <div class="row_2 container">
+        <transitionHistory />
+        <auditLog />
+        <investmentCard />
+      </div>
+      <div class="row_3 container">
+        <latestActivity />
+        <revenueGrowth />
+        <topUsers />
+      </div>
+      <div class="row_4 container">
+        <NewsUpdates />
+        <totalInvest />
+        <manageInvoice />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import pageTitle from "@/components/pageTitle.vue";
 import welcomeBanner from "@/components/welcomeBanner.vue";
 import earningCard from "@/components/earningCard.vue";
 import jobCard from "@/components/jobCard.vue";
@@ -36,6 +46,7 @@ import topUsers from "@/components/topUsers.vue";
 import NewsUpdates from "@/components/NewsUpdate.vue";
 import totalInvest from "@/components/totalInvest.vue";
 import manageInvoice from "@/components/manageIinvoice.vue";
+import left_sidebare from "@/components/left_sidebare.vue";
 export default {
   name: "HomeView",
   components: {
@@ -51,6 +62,28 @@ export default {
     NewsUpdates,
     totalInvest,
     manageInvoice,
+    left_sidebare,
+    pageTitle,
+  },
+  props: {
+    layoutType: {
+      type: String,
+      default: "vertical",
+    },
+  },
+  data() {
+    return {
+      isSidebarVisible: false,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarVisible = !this.isSidebarVisible;
+    },
+    handleUpdateIsHorizontal(newIsHorizontal) {
+      console.log("Received newIsHorizontal:", newIsHorizontal);
+      this.isHorizontal = newIsHorizontal;
+    },
   },
 };
 </script>
@@ -64,11 +97,30 @@ export default {
 .container {
   padding: 0 15px;
 }
-.defaut_dashboard {
+.home_container {
+  margin-top: 74px;
+  display: flex;
+  justify-content: start;
+  background-color: var(--color-secondary);
+}
+
+.left_sidebare.active {
+  transform: translateX(0);
+}
+
+.content_area {
+  flex-grow: 1;
+  transition: margin-inline-start 0.5s ease-in-out;
+}
+
+.content_area.shrink {
+  margin-inline-start: 253px;
+}
+.default_dashboard {
   display: flex;
   justify-content: center;
   align-items: start;
-  background-color: $light-two;
+  background-color: var(--color-secondary);
 }
 .row_2,
 .row_3,

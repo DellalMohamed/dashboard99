@@ -1,8 +1,7 @@
 <template>
-  <div :class="themeClass" class="audit_log">
+  <div class="audit_log">
     <div class="card_header">
       <h3>Audit log</h3>
-      <button @click="toggleTheme">Toggle Theme</button>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -12,7 +11,7 @@
         <a href="" class="dropdown_item"></a>
       </div>-->
     </div>
-    <div class="card_body" :class="themeClass">
+    <div class="card_body">
       <ul>
         <li>
           <div class="img_cont">
@@ -48,7 +47,7 @@
             </a>
             <p>Andre Sluczka</p>
           </div>
-          <span :class="themeClass">2 hours</span>
+          <span>2 hours</span>
         </li>
         <li>
           <div class="img_cont">
@@ -120,24 +119,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../css/variables.scss";
-.light-theme {
-  background-color: $light-one;
-  .secondary-bg {
-    background-color: $light-two;
-  }
-}
-
-.dark-theme {
-  background-color: $dark-one;
-
-  .secondary-bg {
-    background-color: $dark-two;
-  }
-}
 .audit_log {
   width: 25%;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   .card_header {
     display: flex;
@@ -147,6 +132,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {
@@ -197,7 +183,7 @@ export default {
           flex-grow: 1;
           a {
             text-decoration: none;
-            color: #292929;
+            color: var(--color-third);
             h6 {
               font-size: 14px;
               line-height: 1;
@@ -218,7 +204,7 @@ export default {
           border: 1px solid #e5e5e5;
           border-radius: 5px;
           line-height: 22px;
-          background-color: $light-two;
+          background-color: var(--color-secondary);
         }
       }
     }

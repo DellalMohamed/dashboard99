@@ -161,15 +161,23 @@ export default {
   padding: 20px;
   margin: 0 12px;
   border-radius: 1.5rem;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   .card_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-third);
+    }
     div {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      p {
+        color: var(--font-color_2);
+      }
     }
   }
   .card_body {
@@ -187,7 +195,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         gap: 8px;
-        background-color: $light-two;
+        background-color: var(--color-secondary);
         border: 1px solid #e5e5e5;
         border-radius: 10px;
         &:hover {

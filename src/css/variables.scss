@@ -1,4 +1,28 @@
 $light-one: #fff;
 $light-two: #f9f7f6;
-$dark-one: #0e0f0f;
-$dark-two: #181919;
+$dark-one: #181919;
+$dark-two: #0e0f0f;
+$text-clr-one: #292929;
+$text-clr-two: #c6c6c6;
+$font-color_1: #212529;
+$font-color_2: #7c7a7a;
+$font-color_3: #292929;
+$font-color_4: #e2e2e2;
+.light-theme {
+  --color-primary: #{$light-one};
+  --color-secondary: #{$light-two};
+  --color-third: #{$text-clr-one};
+  --font-color: #{$font-color_1};
+  --font-color_2: #{$font-color_3};
+}
+.dark-theme {
+  --color-primary: #{$dark-one};
+  --color-secondary: #{$dark-two};
+  --color-third: #{$text-clr-two};
+  --font-color: #{$font-color_2};
+  --font-color_2: #{$font-color_4};
+}
+:root {
+  --color-picker1: #308e87;
+  --color-picker2: #F38E59;
+}

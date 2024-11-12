@@ -1,7 +1,7 @@
 <template>
   <div class="total_invest">
     <div class="card_header">
-      <h3>Audit log</h3>
+      <h3>Total Invest</h3>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -29,7 +29,7 @@ export default {
   width: 25%;
   padding: 20px;
   margin: 0 12px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   .card_header {
     display: flex;
@@ -39,6 +39,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {

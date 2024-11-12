@@ -1,7 +1,7 @@
 <template>
   <div class="manage_invoice">
     <div class="card_header">
-      <h3>Audit log</h3>
+      <h3>Manage Invoice</h3>
       <div class="dropdown">
         <button>...</button>
       </div>
@@ -70,7 +70,7 @@ export default {
   margin: 0 12px;
   border-radius: 1.5rem;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   .card_header {
     display: flex;
     justify-content: space-between;
@@ -79,6 +79,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {

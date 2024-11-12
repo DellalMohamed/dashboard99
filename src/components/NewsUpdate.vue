@@ -42,7 +42,7 @@ export default {
 .news_update {
   width: 25%;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   .card_header {
     display: flex;
@@ -52,6 +52,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     .dropdown {
       button {
@@ -95,7 +96,7 @@ export default {
           align-items: start;
           flex-grow: 1;
           a {
-            color: #292929;
+            color: var(--color-third);
             text-decoration: none;
             h6 {
               font-size: 14px;

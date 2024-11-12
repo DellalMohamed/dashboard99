@@ -22,7 +22,7 @@
             </option>
           </select>
         </li>
-        <li class="theme link">
+        <li class="theme link" @click="toggle_theme_mode">
           <svg
             width="20px"
             height="20px"
@@ -88,65 +88,15 @@
             />
           </svg>
         </li>
-        <li class="theme link">
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 6.43994V9.76994"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-            />
-            <path
-              d="M12.02 2C8.34002 2 5.36002 4.98 5.36002 8.66V10.76C5.36002 11.44 5.08002 12.46 4.73002 13.04L3.46002 15.16C2.68002 16.47 3.22002 17.93 4.66002 18.41C9.44002 20 14.61 20 19.39 18.41C20.74 17.96 21.32 16.38 20.59 15.16L19.32 13.04C18.97 12.46 18.69 11.43 18.69 10.76V8.66C18.68 5 15.68 2 12.02 2Z"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-            />
-            <path
-              d="M15.33 18.8201C15.33 20.6501 13.83 22.1501 12 22.1501C11.09 22.1501 10.25 21.7701 9.65004 21.1701C9.05004 20.5701 8.67004 19.7301 8.67004 18.8201"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-            />
-          </svg>
+        <li
+          ref="fullScreenElement"
+          class="fullscreen link"
+          @click="toggleFullScreen"
+        >
+          <font-awesome-icon :icon="['far', 'window-maximize']" />
         </li>
-        <li class="theme link">
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 6.43994V9.76994"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-            />
-            <path
-              d="M12.02 2C8.34002 2 5.36002 4.98 5.36002 8.66V10.76C5.36002 11.44 5.08002 12.46 4.73002 13.04L3.46002 15.16C2.68002 16.47 3.22002 17.93 4.66002 18.41C9.44002 20 14.61 20 19.39 18.41C20.74 17.96 21.32 16.38 20.59 15.16L19.32 13.04C18.97 12.46 18.69 11.43 18.69 10.76V8.66C18.68 5 15.68 2 12.02 2Z"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-            />
-            <path
-              d="M15.33 18.8201C15.33 20.6501 13.83 22.1501 12 22.1501C11.09 22.1501 10.25 21.7701 9.65004 21.1701C9.05004 20.5701 8.67004 19.7301 8.67004 18.8201"
-              stroke="#292D32"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-            />
-          </svg>
+        <li class="book_mark link">
+          <font-awesome-icon :icon="['far', 'bookmark']" />
         </li>
         <li class="cloud_mode">
           <a href="">
@@ -184,19 +134,6 @@
     <router-link to="/a">wait</router-link> |
     <router-link to="/about">About</router-link>-->
   </div>
-  <div class="page_title">
-    <div class="header_name">
-      <h2>Default Dashboard</h2>
-      <p>Welcome back! Let’s start from where you left.</p>
-    </div>
-    <div class="route_root">
-      <div class="img_cont">
-        <img src="../assets/home-svgrepo-com.svg" alt="" />
-      </div>
-      <router-link class="link"> Dashboard </router-link>
-      <router-link class="link"> Default </router-link>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -204,6 +141,7 @@ export default {
   data() {
     return {
       isVisible: false,
+
       options: [
         { value: "option1", text: "English", short: "EN" },
         { value: "option2", text: "Deutsch", short: "xwc" },
@@ -218,7 +156,26 @@ export default {
     toggleDisplay() {
       this.isVisible = !this.isVisible;
     },
+
+    toggle_theme_mode() {
+      this.$emit("toggle-theme");
+    },
+
+    toggleFullScreen() {
+      const element = document.documentElement;
+
+      if (!document.fullscreenElement) {
+        if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    },
   },
+
   setup() {
     return {};
   },
@@ -236,13 +193,17 @@ export default {
   display: flex;
   align-items: center;
   height: 74px;
+  position: fixed;
+  top: 0;
+  z-index: 4;
   .logo_left_sidebarBTn {
-    width: 262px;
+    width: 253px;
     height: 74px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    padding: 15px 16px;
     background-color: #308e87;
     button {
       img {
@@ -260,9 +221,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     height: 100%;
-    background-color: $light-one;
+    background-color: var(--color-primary);
     .input_search {
       margin: 0 57px;
       input {
@@ -271,7 +231,7 @@ export default {
         border: none;
         border-radius: 30px;
         padding-left: 28px;
-        background-color: $light-two;
+        background-color: var(--color-secondary);
         cursor: pointer;
         &:focus {
           outline: none;
@@ -366,7 +326,7 @@ export default {
         width: 33px;
         height: 33px;
         border-radius: 50%;
-        background-color: $light-two;
+        background-color: var(--color-secondary);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -403,52 +363,6 @@ export default {
           justify-content: center;
           align-items: center;
         }
-      }
-    }
-  }
-}
-// welcome row
-.page_title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px;
-  background-color: $light-two;
-  .header_name {
-    text-align: start;
-    h2 {
-      font-weight: 700;
-      font-size: 24px;
-      letter-spacing: 0.5px;
-    }
-    p {
-      font-weight: 400;
-      font-size: 12px;
-      color: #aaa3a0;
-    }
-  }
-  .route_root {
-    display: flex;
-    align-items: center;
-    .img_cont {
-      width: 22px;
-      height: 22px;
-      padding: 5px;
-      border: 1px solid #e5e5e5;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        width: 16px;
-      }
-    }
-    .link {
-      text-decoration: none;
-      color: #308e87;
-      &::before {
-        content: "/";
-        margin: 0 8px;
       }
     }
   }

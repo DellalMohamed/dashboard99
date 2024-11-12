@@ -2,13 +2,6 @@
   <div class="earning_card">
     <div class="card_header">
       <h3>Earnings Trend</h3>
-      <div class="drop_down">
-        <select class="select" name="" id="">
-          <option value="">Weekly</option>
-          <option value="">Monthly</option>
-          <option value="">Yearly</option>
-        </select>
-      </div>
     </div>
     <div class="card_body">
       <div class="head_body">
@@ -40,7 +33,7 @@ export default {
   padding: 20px 20px 0;
   margin: 0 12px;
   border-radius: 1.5rem;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   .card_header {
     display: flex;
     justify-content: space-between;
@@ -50,18 +43,7 @@ export default {
       font-size: 20px;
       letter-spacing: 0.5px;
       margin: 0;
-    }
-    .drop_down {
-      select {
-        width: 100px;
-        height: 31px;
-        padding: 4px 14px;
-        border-radius: 5px;
-        background-color: $light-two;
-        &:focus {
-          outline: none;
-        }
-      }
+      color: var(--color-third);
     }
   }
   .card_body {
@@ -70,9 +52,11 @@ export default {
       justify-content: start;
       align-items: center;
       gap: 1rem;
+      color: #212529;
       h2 {
         font-weight: 700;
         letter-spacing: 0.5px;
+        color: var(--font-color);
       }
       span {
         font-size: 14px;

@@ -65,7 +65,7 @@ export default {
 @import "../css/variables.scss";
 .transition_history {
   margin: 0 12px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   width: 50%;
   padding: 20px;
   border-radius: 1.5rem;
@@ -76,6 +76,7 @@ export default {
       font-weight: 700;
       letter-spacing: 0.5px;
       text-align: start;
+      color: var(--color-third);
     }
   }
   .card_body {
@@ -144,7 +145,7 @@ export default {
                   height: 33px;
                   border: 1px solid #e5e5e5;
                   border-radius: 50%;
-                  background-color: $light-two;
+                  background-color: var(--color-secondary);
                   display: flex;
                   justify-content: center;
                   align-items: center;
@@ -158,7 +159,7 @@ export default {
                   text-decoration: none;
                   h6 {
                     font-size: 14px;
-                    color: #292929;
+                    color: var(--color-third);
                   }
                 }
                 p {

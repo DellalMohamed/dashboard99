@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   .footer-copyright {
     font-size: 14px;
     font-weight: 600;

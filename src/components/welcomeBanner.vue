@@ -39,7 +39,7 @@ export default {
 @import "../css/variables.scss";
 .welcome_banner {
   width: 33%;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   border-radius: 1.5rem;
   overflow: hidden;
   .welcome_card {
@@ -103,6 +103,7 @@ export default {
           font-weight: 700;
           font-size: 30px;
           margin: 0;
+          color: var(--color-third);
         }
         img {
           width: 30px;
@@ -113,6 +114,7 @@ export default {
       p {
         text-align: start;
         margin: 0 0 19px;
+        color: var(--font-color);
       }
       .card_bottom {
         display: flex;
@@ -130,7 +132,7 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: $light-two;
+          background-color: var(--color-secondary);
           border-radius: 6px;
           border: 1px solid black;
           width: 115px;

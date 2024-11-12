@@ -31,7 +31,7 @@ export default {
   margin: 0 12px;
   border-radius: 1.5rem;
   padding: 20px;
-  background-color: $light-one;
+  background-color: var(--color-primary);
   .card_header {
     display: flex;
     justify-content: space-between;
@@ -40,6 +40,7 @@ export default {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--color-third);
     }
     ul {
       list-style: none;
@@ -47,13 +48,13 @@ export default {
       display: flex;
       border: 1px solid #e5e5e5;
       border-radius: 5px;
-      background-color: $light-two;
+      background-color: var(--color-secondary);
       li {
         a {
           display: block;
           text-decoration: none;
           padding: 6px 8px;
-          color: #292929;
+          color: var(--color-third);
         }
       }
     }
