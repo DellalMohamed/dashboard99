@@ -6,6 +6,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    props: { isVisible: true },
   },
   {
     path: "/a",

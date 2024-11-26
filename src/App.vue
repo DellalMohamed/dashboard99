@@ -1,6 +1,6 @@
 <template>
   <div :class="[isDarkTheme ? 'dark-theme' : 'light-theme']" class="app_cont">
-    <navBar @toggle-theme="toggleDarkMode" />
+    <navBar @toggle-theme="toggleDarkMode" @toggle-sidebar="toggleSidebar" />
     <transition name="sidebare_out">
       <settingIcon
         class="setting_icon"

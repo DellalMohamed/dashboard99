@@ -3,7 +3,11 @@
     <div class="logo_left_sidebarBTn">
       <img src="../assets/download.png" alt="" />
       <button>
-        <img src="../assets/menu-svgrepo-com.svg" alt="" />
+        <img
+          @click="toggleSidebar"
+          src="../assets/menu-svgrepo-com.svg"
+          alt=""
+        />
       </button>
     </div>
     <div class="nav-right_part">
@@ -156,7 +160,9 @@ export default {
     toggleDisplay() {
       this.isVisible = !this.isVisible;
     },
-
+    toggleSidebar() {
+      this.$emit("toggle-sidebar");
+    },
     toggle_theme_mode() {
       this.$emit("toggle-theme");
     },

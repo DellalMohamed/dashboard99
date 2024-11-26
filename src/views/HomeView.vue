@@ -1,6 +1,10 @@
 <template>
   <div class="home_container">
-    <left_sidebare :isVisible="isSidebarVisible" :layoutType="layoutType" />
+    <left_sidebare
+      :isVisible="isSidebarVisible"
+      :layoutType="layoutType"
+      :is-visible="isVisible"
+    />
     <div
       class="content_area"
       :class="{ shrink: isSidebarVisible }"
@@ -69,6 +73,10 @@ export default {
     layoutType: {
       type: String,
       default: "vertical",
+    },
+    isVisible: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
